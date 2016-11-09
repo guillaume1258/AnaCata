@@ -1,0 +1,24 @@
+function [S] = Ind2Species(X) 
+% gives the value to the species names from the corresponding index in the vector X 
+S.m_r = X(1); 
+S.m_t = X(2); 
+S.m_m = X(3); 
+S.m_q = X(4); 
+S.m_p = X(5); 
+S.rm_r = X(6); 
+S.rm_t = X(7); 
+S.rm_m = X(8); 
+S.rm_q = X(9); 
+S.rm_p = X(10); 
+S.zm_r = X(11); 
+S.zm_t = X(12); 
+S.zm_m = X(13); 
+S.zm_q = X(14); 
+S.zm_p = X(15); 
+S.e_r = X(16); 
+S.e_t = X(17); 
+S.e_m = X(18); 
+S.e_q = X(19); 
+S.e_p = X(20); 
+S.s_i = X(21); 
+S.a = X(22); 
