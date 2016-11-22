@@ -26,21 +26,22 @@ k.w     = struct();
 k.theta = struct();
 k.K     = struct();
 
+z = 2;
 % transcriptional parameters
-k.w.r     = 540;         % max ribosome transcription rate [molecs / min / cell]
-k.w.t     = 3.09;         % max enzyme T transcription rate [molecs / min /cell]
-k.w.m     = 3.09;         % max enzyme M transcription rate [molecs / min /cell]
+k.w.r     = 10 * z;         % max ribosome transcription rate [molecs / min / cell]
+k.w.t     = 0.0772 * z;         % max enzyme T transcription rate [molecs / min /cell]
+k.w.m     = 0.0772 * z;         % max enzyme M transcription rate [molecs / min /cell]
 k.w.p     = 0;         % max enzyme P transcription rate [molecs / min /cell]
-k.w.q     = 963;         % max q transcription rate [molecs / min /cell]
+k.w.q     = 24.0750 * z;         % max q transcription rate [molecs / min /cell]
 
 k.K.q     = 167030;                     % q auto-inhibition threshold [molecs / cell]
 k.alpha_q = 4;                          % q auto-inhibition hill coefficient [none]
 
-k.theta.r   = 5180;       % ribosome transcription threshold [molecs / cell]
-k.theta.t   = 0.41;       % t protein transcription threshold [molecs / cell]
-k.theta.m   = 0.41;       % m protein transcription threshold [molecs / cell]
-k.theta.p   = 0.41;       % p protein transcription threshold [molecs / cell]
-k.theta.q   = 0.41;       % q protein transcription threshold [molecs / cell]
+k.theta.r   = 1e5;       % ribosome transcription threshold [molecs / cell]
+k.theta.t   = 4.38;       % t protein transcription threshold [molecs / cell]
+k.theta.m   = 4.38;       % m protein transcription threshold [molecs / cell]
+k.theta.p   = 4.38;       % p protein transcription threshold [molecs / cell]
+k.theta.q   = 4.38;       % q protein transcription threshold [molecs / cell]
 
 k.d         = 0.1;          % [r,t,m,p,q,...] mRNA-degradation rate [min^-1]
 

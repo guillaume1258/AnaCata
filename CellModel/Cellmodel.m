@@ -69,21 +69,21 @@ k.sigma_i = 1;
 
 for i = 1 : length(v.n_s)
     
-    for j = 1 : length(v.TxScaling)
+    for j = 1 : 1
         
         Parameters;
         k.n_s = v.n_s(i);
         
         %X0(1:26) = X_Init(i , j).X';
-        
-        TxScaling = v.TxScaling(j);
-        
-        k.w.r = k.w.r * TxScaling;
-        k.w.t = k.w.t * TxScaling;
-        k.w.m = k.w.m * TxScaling;
-        k.w.p = k.w.p * TxScaling;
-        k.w.q = k.w.q * TxScaling;
-        
+%         
+%         TxScaling = v.TxScaling(j);
+%         
+%         k.w.r = k.w.r * TxScaling;
+%         k.w.t = k.w.t * TxScaling;
+%         k.w.m = k.w.m * TxScaling;
+%         k.w.p = k.w.p * TxScaling;
+%         k.w.q = k.w.q * TxScaling;
+%         
         tic;
         k.StartTime = clock;
         %% Integration time
@@ -117,3 +117,5 @@ for i = 1 : length(v.n_s)
     end
     
 end
+
+save('SimulationsData/CurrentRawData.mat' , 'SteadyX')

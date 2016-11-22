@@ -52,4 +52,4 @@ Scott.f_r_mean = Scott.RNA_Prot_mean .* p;
 Scott.f_r_std  = Scott.RNA_Prot_std  .* p;
 
 Scott.alpha = mean(Scott.f_r_mean(: , :)) / mean(Scott.alpha_mean(: , :)) .* Scott.alpha_mean;
-v.lambda    = v.lambda * 60 / log(2);
+%v.lambda    = v.lambda * 60 / log(2);
