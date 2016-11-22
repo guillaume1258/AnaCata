@@ -1,9 +1,6 @@
-function [ dX , flag , new_data ] = ode( t , X , data )
+function [dX , flag , new_data] = ode( t , X , data)
+%function [dX] = ode( t , X , k , dxdt)
 % Integration occurs here
-
-%flag = 0;
-
-%Parameters;
 
 k = data.k;
 

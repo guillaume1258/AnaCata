@@ -30,7 +30,6 @@ end
 
 species{N_t * N_g + 1} = 's_i';
 species{N_t * N_g + 2} = 'a';
-%species{N_t * N_g + 3} = 'e_DnaA_a';
 
 end
 

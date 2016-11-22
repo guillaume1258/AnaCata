@@ -25,7 +25,7 @@ for i = 1 : N_g
     
 end
 
-fprintf(New , ') * A.gamma; \n');
+fprintf(New , '+ k.beta * S.rm_r) * A.gamma; \n');
 
 fprintf(New , 'A.lambda       = A.rate_tot / k.M; \n');
 
