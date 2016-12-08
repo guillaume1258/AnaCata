@@ -54,8 +54,8 @@ for i = 1 : N_s
     
     end
     
-    % e_r + m_x <-> rm_x @k.b , k.u
-    fprintf(New , 'v2_%s = - S.m_%s * S.e_r * 1 / 10 *  k.b + k.u * S.rm_%s; \n' , gene , gene , gene);
+    % 10 *  e_r + m_x <-> rm_x @k.b , k.u
+    fprintf(New , 'v2_%s = - S.m_%s * S.e_r  *  1/10*k.b + k.u * S.rm_%s; \n' , gene , gene , gene);
     fprintf(New , 'dxdt.m_%s  = + dxdt.m_%s + v2_%s; \n' , gene , gene , gene);
     fprintf(New , 'dxdt.e_r   = + dxdt.e_r + 10 * v2_%s; \n' , gene);
     fprintf(New , 'dxdt.rm_%s = + dxdt.rm_%s - v2_%s; \n \n' , gene , gene , gene);

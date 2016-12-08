@@ -8,6 +8,7 @@ Scott.lambda_std    = zeros(5 , 6);
 Scott.RNA_Prot_std  = zeros(5 , 6);
 
 % Mean  lambda
+% CAREFUL HERE, UNIT IS EXPONENTIAL GROWTH NOT DOUBLING/HOUR
 Scott.lambda_mean(: , 1)   = [0.40 , 0.33 , 0.24 , 0.19 , 0.12];
 Scott.lambda_mean(: , 2)   = [0.57 , 0.50 , 0.39 , 0.30 , 0.23];
 Scott.lambda_mean(: , 3)   = [0.71 , 0.57 , 0.38 , 0.23 , 0.14];

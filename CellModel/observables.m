@@ -8,8 +8,12 @@ alpha = 1;
 o = struct();
 
 % total number of ribosomes
-o.r_tot = 10 * (+ S.rm_r + S.rm_t + S.rm_m  + S.rm_q + S.rm_p ...
-               + S.zm_r + S.zm_t + S.zm_m  + S.zm_q + S.zm_p) + S.e_r;
+o.r_tot =  + 10 * (S.rm_r + S.rm_t + S.rm_m  + S.rm_q + S.rm_p ...
+           + S.zm_r + S.zm_t + S.zm_m  + S.zm_q + S.zm_p) + S.e_r;
+
+% Fraction of total ribosomes that are free ribosomes
+o.FracFreeRibo = S.e_r / o.r_tot;
+       
 
 % total mass of each protein
 o.ribosome_mass = ...
@@ -30,7 +34,6 @@ o.rRNA_mass = k.beta * o.ribosome_mass;
   
 % mass fractions of r, r_free r, t, m, p and q  
 o.r_fraction           = o.ribosome_mass(end) / o.total_mass(end);
-o.r_free_fraction      = S.e_r * k.n.r ./ o.total_mass(end);
 o.t_fraction           = S.e_t * k.n.t ./ o.total_mass(end);
 o.m_fraction           = S.e_m * k.n.m ./ o.total_mass(end);
 o.q_fraction           = S.e_q * k.n.q ./ o.total_mass(end);

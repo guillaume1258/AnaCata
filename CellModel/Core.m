@@ -14,7 +14,7 @@ dxdt.e_r  = + dxdt.e_r + v1_r;
 dxdt.rm_r = + dxdt.rm_r - v1_r; 
 dxdt.a     = + dxdt.a - v1_r * k.n.r * (1 + k.beta); 
  
-v2_r = - S.m_r * S.e_r * 1 / 10 *  k.b + k.u * S.rm_r; 
+v2_r = - S.m_r * S.e_r  *  1/10*k.b + k.u * S.rm_r; 
 dxdt.m_r  = + dxdt.m_r + v2_r; 
 dxdt.e_r   = + dxdt.e_r + 10 * v2_r; 
 dxdt.rm_r = + dxdt.rm_r - v2_r; 
@@ -36,7 +36,7 @@ dxdt.e_t  = + dxdt.e_t + v1_t;
 dxdt.rm_t = + dxdt.rm_t - v1_t; 
 dxdt.a     = + dxdt.a - v1_t * k.n.t; 
  
-v2_t = - S.m_t * S.e_r * 1 / 10 *  k.b + k.u * S.rm_t; 
+v2_t = - S.m_t * S.e_r  *  1/10*k.b + k.u * S.rm_t; 
 dxdt.m_t  = + dxdt.m_t + v2_t; 
 dxdt.e_r   = + dxdt.e_r + 10 * v2_t; 
 dxdt.rm_t = + dxdt.rm_t - v2_t; 
@@ -58,7 +58,7 @@ dxdt.e_m  = + dxdt.e_m + v1_m;
 dxdt.rm_m = + dxdt.rm_m - v1_m; 
 dxdt.a     = + dxdt.a - v1_m * k.n.m; 
  
-v2_m = - S.m_m * S.e_r * 1 / 10 *  k.b + k.u * S.rm_m; 
+v2_m = - S.m_m * S.e_r  *  1/10*k.b + k.u * S.rm_m; 
 dxdt.m_m  = + dxdt.m_m + v2_m; 
 dxdt.e_r   = + dxdt.e_r + 10 * v2_m; 
 dxdt.rm_m = + dxdt.rm_m - v2_m; 
@@ -79,7 +79,7 @@ dxdt.e_q  = + dxdt.e_q + v1_q;
 dxdt.rm_q = + dxdt.rm_q - v1_q; 
 dxdt.a     = + dxdt.a - v1_q * k.n.q; 
  
-v2_q = - S.m_q * S.e_r * 1 / 10 *  k.b + k.u * S.rm_q; 
+v2_q = - S.m_q * S.e_r  *  1/10*k.b + k.u * S.rm_q; 
 dxdt.m_q  = + dxdt.m_q + v2_q; 
 dxdt.e_r   = + dxdt.e_r + 10 * v2_q; 
 dxdt.rm_q = + dxdt.rm_q - v2_q; 
@@ -101,7 +101,7 @@ dxdt.e_p  = + dxdt.e_p + v1_p;
 dxdt.rm_p = + dxdt.rm_p - v1_p; 
 dxdt.a     = + dxdt.a - v1_p * k.n.p; 
  
-v2_p = - S.m_p * S.e_r * 1 / 10 *  k.b + k.u * S.rm_p; 
+v2_p = - S.m_p * S.e_r  *  1/10*k.b + k.u * S.rm_p; 
 dxdt.m_p  = + dxdt.m_p + v2_p; 
 dxdt.e_r   = + dxdt.e_r + 10 * v2_p; 
 dxdt.rm_p = + dxdt.rm_p - v2_p; 

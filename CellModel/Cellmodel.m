@@ -23,7 +23,6 @@ Type = {'m' ; 'rm' ; 'zm' ; 'e'};
 
 Gene_names = {'r' ; 't' ; 'm' ; 'q' ; 'p'};
 
-
 %% Names of the species
 
 species = SpeciesNames(Gene_names , Type);
@@ -56,11 +55,12 @@ Initial_Conditions;
 X_Init = importdata('X0_vectors/Initial_Condition_Hwa.mat');
 %% Loop over range of n_s and [cm]
 
-v.n_s    = [0.106 , 0.116 , 0.218 , 0.366 , 0.564 , 1.123]; 
-v.cm     = [0 , 0 , 2 , 4 , 6 , 8];
+v.n_s    = logspace(log10(0.06) , log10(0.6) , 6); 
+%v.cm     = [0 , 0 , 2 , 4 , 6 , 8];
 v.wp     = [0 , 10.4 , 35.6 , 72.1 , 213 , 395];
 v.wp_cAA = [0 , 17.6 , 40 , 60.7 , 130 , 210 , 299];
-v.TxScaling = logspace(- 3 , 0 , 20); 
+
+v.cm = [0 2 4 8 12];
 
 N_Lim  = 4;
 N_Cond = 6;
@@ -69,21 +69,12 @@ k.sigma_i = 1;
 
 for i = 1 : length(v.n_s)
     
-    for j = 1 : 1
+    for j = 1 : length(v.cm)
         
         Parameters;
         k.n_s = v.n_s(i);
+        k.cm  = v.cm(j);
         
-        %X0(1:26) = X_Init(i , j).X';
-%         
-%         TxScaling = v.TxScaling(j);
-%         
-%         k.w.r = k.w.r * TxScaling;
-%         k.w.t = k.w.t * TxScaling;
-%         k.w.m = k.w.m * TxScaling;
-%         k.w.p = k.w.p * TxScaling;
-%         k.w.q = k.w.q * TxScaling;
-%         
         tic;
         k.StartTime = clock;
         %% Integration time
@@ -107,7 +98,9 @@ for i = 1 : length(v.n_s)
         [status,t,X] = CVode([tf],'Normal');
         
         % Record the steady state
-        SteadyX(i , j).X       = X;
+        Sim.SteadyX(i , j).X = X;
+        Sim.ns_vec           = v.n_s;
+        Sim.cm_vec           = v.cm;
         
         % Get the number of i protein for each condition
         a_number(i , j)        = X(end);
@@ -118,4 +111,9 @@ for i = 1 : length(v.n_s)
     
 end
 
-save('SimulationsData/CurrentRawData.mat' , 'SteadyX')
+Save_Name = 'SimulationsData/CurrentSim';
+
+save(Save_Name , 'Sim')
+
+Analysis;
+close all
